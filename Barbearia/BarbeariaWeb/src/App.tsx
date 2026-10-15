@@ -1,4 +1,5 @@
 import Admin from './pages/Admin/Admin';
+import Barbeiro from './pages/Barbeiro/Barbeiro';
 import Cliente from './pages/Cliente/Cliente';
 import Home from './pages/Home/Home';
 import Login from './pages/login/Login';
@@ -12,6 +13,7 @@ function App()
   const em = (base: string) => caminho === base || caminho.startsWith(`${base}/`);
 
   if (em('/admin')) return perfil === 'admin' ? <Admin /> : <Login />;
+  if (em('/barbeiro')) return perfil === 'barbeiro' ? <Barbeiro /> : <Login />;
   if (caminho === '/login') return <Login />;
   if (caminho === '/cliente') return <Cliente />;
 
