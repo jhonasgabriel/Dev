@@ -106,6 +106,11 @@ builder.Services.AddScoped<ImagemService>();
 builder.Services.AddScoped<ProdutoRepository>();
 builder.Services.AddScoped<ProdutoService>();
 
+// Atendimento, financeiro e relatórios
+builder.Services.AddScoped<AtendimentoRepository>();
+builder.Services.AddScoped<AtendimentoService>();
+builder.Services.AddScoped<ControleRepository>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
