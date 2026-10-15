@@ -1,7 +1,9 @@
+import Login from './pages/login/Login';
+
 /** Rotas da aplicação: cada módulo adiciona as suas páginas aqui. */
 function App()
 {
-  return <main>Barbearia dos Reis</main>;
+  return <Login />;
 }
 
 export default App;
