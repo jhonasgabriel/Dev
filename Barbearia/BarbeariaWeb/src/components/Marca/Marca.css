@@ -1,0 +1,32 @@
+.marca-reis {
+  display: flex;
+  width: 142px;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  line-height: 1;
+  text-decoration: none;
+}
+.marca-reis > span {
+  color: #cda758;
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 5px;
+}
+.marca-reis > strong {
+  margin-top: 7px;
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.marca-reis svg {
+  width: 29px;
+  height: 18px;
+  color: #cda758;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}

@@ -1,0 +1,302 @@
+.seletor-data {
+  position: relative;
+  width: 100%;
+}
+.seletor-data-campo {
+  box-sizing: border-box;
+  padding-right: 52px;
+  cursor: text;
+}
+.seletor-data-botao {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  display: grid;
+  width: 46px;
+  height: calc(100% - 2px);
+  place-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.seletor-data-botao:hover {
+  background: #f0ecfb;
+}
+.seletor-data-campo {
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  color: #222;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+  text-align: left;
+  cursor: text;
+}
+.seletor-data-campo:hover,
+.seletor-data-campo.aberto {
+  border-color: #111;
+}
+.seletor-data-campo .placeholder {
+  color: #777;
+}
+.icone-calendario {
+  position: relative;
+  width: 18px;
+  height: 17px;
+  flex: 0 0 18px;
+  border: 2px solid #555;
+  border-radius: 3px;
+}
+.icone-calendario::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 100%;
+  border-top: 2px solid #555;
+}
+.icone-calendario::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 3px;
+  width: 8px;
+  height: 4px;
+  border-right: 2px solid #555;
+  border-left: 2px solid #555;
+}
+.calendario {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 8px);
+  left: 0;
+  width: min(300px, calc(100vw - 48px));
+  padding: 16px;
+  color: #292929;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  box-shadow: 0 14px 36px rgb(0 0 0 / 22%);
+}
+.calendario-cabecalho {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.calendario-periodo,
+.calendario-setas {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.calendario button {
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.calendario-periodo > button {
+  padding: 4px 3px;
+  color: #222;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.seta-baixo {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin: 0 2px 3px 4px;
+  border-right: 1.5px solid #6d4bd2;
+  border-bottom: 1.5px solid #6d4bd2;
+  transform: rotate(45deg);
+}
+.calendario-setas button {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  place-items: center;
+  color: #555;
+  background: transparent;
+  border-radius: 4px;
+}
+.seta-esquerda,
+.seta-direita {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-bottom: 2px solid currentColor;
+}
+.seta-esquerda {
+  border-left: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+.seta-direita {
+  border-right: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+.calendario-setas button:hover:not(:disabled) {
+  background: #f0ecfb;
+}
+.calendario-setas button:disabled {
+  color: #ccc;
+  cursor: default;
+}
+.calendario-menu {
+  position: absolute;
+  z-index: 2;
+  top: 34px;
+  max-height: 275px;
+  overflow-y: auto;
+  padding: 8px 0;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 18%);
+}
+.menu-mes {
+  left: 0;
+  width: 158px;
+}
+.menu-ano {
+  left: 115px;
+  width: 92px;
+}
+.calendario-menu small {
+  display: block;
+  padding: 4px 13px 7px;
+  color: #999;
+  font-size: 10px;
+  font-weight: 700;
+}
+.calendario-menu button {
+  display: block;
+  width: 100%;
+  padding: 7px 13px;
+  color: #333;
+  background: transparent;
+  font-size: 13px;
+  text-align: left;
+}
+.calendario-menu button:hover,
+.calendario-menu button.ativo {
+  color: #5b39bd;
+  background: #f0ecfb;
+}
+.calendario-grade {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(30px, 1fr));
+  gap: 3px;
+}
+.dia-semana {
+  display: grid;
+  height: 30px;
+  place-items: center;
+  color: #777;
+  font-size: 11px;
+  font-weight: 700;
+}
+.calendario-grade button {
+  width: 100%;
+  min-width: 30px;
+  aspect-ratio: 1;
+  padding: 0;
+  color: #444;
+  background: transparent;
+  border-radius: 50%;
+  font-size: 12px;
+}
+.calendario-grade button:hover:not(:disabled) {
+  background: #f0ecfb;
+}
+.calendario-grade button.selecionado {
+  color: #fff;
+  background: #6846ca;
+  font-weight: 700;
+}
+.calendario-grade button:disabled {
+  color: #ccc;
+  cursor: default;
+}
+.calendario-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #eee;
+}
+.calendario-acoes button {
+  min-height: 38px;
+  padding: 0 15px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.calendario-acoes .cancelar {
+  color: #333;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+.calendario-acoes .selecionar {
+  color: #fff;
+  background: #6846ca;
+}
+.calendario-acoes .selecionar:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+@media (max-width: 600px) {
+  .calendario {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: calc(100vw - 32px);
+    max-width: 340px;
+    padding: 16px;
+    transform: translate(-50%, -50%);
+  }
+  .calendario-grade {
+    gap: 4px;
+  }
+  .calendario-grade button {
+    min-width: 32px;
+    font-size: 13px;
+  }
+  .calendario-acoes {
+    gap: 8px;
+  }
+  .calendario-acoes button {
+    min-height: 42px;
+  }
+}
+
+@media (max-width: 360px) {
+  .calendario {
+    width: calc(100vw - 20px);
+    padding: 14px 12px;
+  }
+  .calendario-periodo > button {
+    font-size: 12px;
+  }
+  .calendario-setas button {
+    width: 28px;
+    height: 32px;
+  }
+  .calendario-grade {
+    grid-template-columns: repeat(7, minmax(28px, 1fr));
+    gap: 2px;
+  }
+  .calendario-grade button {
+    min-width: 28px;
+  }
+}
