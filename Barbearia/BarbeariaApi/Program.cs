@@ -96,6 +96,10 @@ builder.Services.AddScoped<LoginService>();
 builder.Services.AddScoped<PessoaRepository>();
 builder.Services.AddScoped<PessoaService>();
 
+// Agenda e catálogo
+builder.Services.AddScoped<ServicoRepository>();
+builder.Services.AddScoped<ServicoService>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
