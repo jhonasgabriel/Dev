@@ -1,0 +1,72 @@
+# .NET build outputs
+Barbearia/BarbeariaApi/bin/
+Barbearia/BarbeariaApi/obj/
+Barbearia/artifacts/
+
+# Visual Studio / user-specific settings
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Configuração da API: somente appsettings.json (versionado com a conexão vazia)
+Barbearia/BarbeariaApi/appsettings.*.json
+secrets.json
+
+# Front-end dependencies, build outputs and caches
+Barbearia/BarbeariaWeb/node_modules/
+Barbearia/BarbeariaWeb/dist/
+Barbearia/BarbeariaWeb/dist-ssr/
+Barbearia/BarbeariaWeb/.tmp/
+Barbearia/BarbeariaWeb/.vite/
+*.tsbuildinfo
+
+# Local environment files
+.env
+.env.*
+!.env.example
+*.local
+
+# Logs and test coverage
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+coverage/
+
+# Editor and operating-system files
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.sw?
+
+# Banco de dados: estrutura e migrações são restritas (não versionadas)
+Barbearia/obj/scripts/
+Barbearia/obj/BRB/MIG/
+Barbearia/obj/README-SqlServer.md
+*.bak
+*.mdf
+*.ldf
+
+# Imagens enviadas pelo sistema (produtos e fotos dos profissionais)
+Barbearia/obj/img/
+Barbearia/BarbeariaApi/wwwroot/uploads/
+
+# Dados locais do MySQL antigo (contêm dados pessoais)
+Barbearia/mysql-data/
+Barbearia/.mysql-data*/
+
+# Ferramentas internas e de desenvolvimento (somente locais)
+Barbearia/tools/
+Barbearia/.claude/
+*.http
+.editorconfig
+.prettierrc*
+.prettierignore
+.oxlintrc*
