@@ -92,6 +92,10 @@ builder.Services.AddSingleton<CredenciaisService>();
 builder.Services.AddScoped<LoginRepository>();
 builder.Services.AddScoped<LoginService>();
 
+// Pessoas, equipe e barbeiros
+builder.Services.AddScoped<PessoaRepository>();
+builder.Services.AddScoped<PessoaService>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
