@@ -99,6 +99,9 @@ builder.Services.AddScoped<PessoaService>();
 // Agenda e catálogo
 builder.Services.AddScoped<ServicoRepository>();
 builder.Services.AddScoped<ServicoService>();
+builder.Services.AddScoped<ImagemService>();
+builder.Services.AddScoped<ProdutoRepository>();
+builder.Services.AddScoped<ProdutoService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -123,6 +126,16 @@ else
 }
 
 app.UseCors("React");
+
+// Imagens enviadas (produtos e profissionais) ficam fora do código, em obj/img, e são servidas em /uploads.
+var pastaImagens = ImagemService.Diretorio(app.Environment, app.Configuration);
+Directory.CreateDirectory(pastaImagens);
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(pastaImagens),
+    RequestPath = "/uploads",
+    ServeUnknownFileTypes = false
+});
 
 app.UseAuthentication();
 app.UseAuthorization();
