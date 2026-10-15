@@ -1,0 +1,137 @@
+.barbeiros-orientacao {
+  margin: 0 0 20px;
+  color: #aaa79f;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.barbeiros-painel button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+.barbeiros-painel .clientes-lista article > .profissional-avatar {
+  border-width: 1px;
+}
+.barbeiros-painel .clientes-lista small {
+  color: #d7bd83;
+}
+
+.barbeiro-perfil-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.barbeiro-perfil-cabecalho > div {
+  min-width: 0;
+}
+.barbeiro-perfil-cabecalho h2 {
+  overflow-wrap: anywhere;
+}
+.barbeiro-perfil-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 18px;
+}
+.barbeiro-perfil-acoes button {
+  min-height: 40px;
+  padding: 0 16px;
+  color: #ddd;
+  background: #111310;
+  border: 1px solid #474842;
+  border-radius: 2px;
+  font: inherit;
+  cursor: pointer;
+}
+.barbeiro-perfil-acoes button.ativo {
+  color: #111;
+  background: #cda758;
+  border-color: #cda758;
+}
+.barbeiro-perfil-servicos {
+  display: grid;
+  gap: 16px;
+}
+
+.barbeiro-foto-cadastro {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.barbeiro-foto-cadastro > img,
+.barbeiro-foto-cadastro > span {
+  display: grid;
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  place-items: center;
+  object-fit: cover;
+  color: #cda758;
+  background: #111310;
+  border: 2px solid #3d3e38;
+  border-radius: 50%;
+  font-size: 26px;
+  font-weight: 700;
+}
+.barbeiro-foto-cadastro > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.barbeiro-foto-cadastro small {
+  flex-basis: 100%;
+  color: #85867f;
+}
+.barbeiro-foto-botao {
+  position: relative;
+  flex-direction: row !important;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 12px;
+  color: #111 !important;
+  background: #cda758;
+  border-radius: 2px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.barbeiro-foto-botao input {
+  position: absolute;
+  inset: 0;
+  min-height: 0 !important;
+  opacity: 0;
+  cursor: pointer;
+}
+.modal-cliente input[type='date'] {
+  color-scheme: dark;
+}
+.barbeiro-foto-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Agenda em tabela no perfil do barbeiro (Admin). */
+.barbeiro-tabela {
+  overflow-x: auto;
+}
+.barbeiro-tabela table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.barbeiro-tabela th,
+.barbeiro-tabela td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #353630;
+  text-align: left;
+}
+.barbeiro-tabela th {
+  color: #cda758;
+  background: #111310;
+}
+.barbeiro-tabela td:first-child,
+.barbeiro-tabela td:nth-child(4) {
+  white-space: nowrap;
+}

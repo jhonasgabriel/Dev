@@ -1,0 +1,166 @@
+.profissional-avatar {
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #3d3e38;
+  background: #111310;
+}
+.profissional-avatar.sem-foto {
+  color: #cda758;
+  font-size: 24px;
+  font-weight: 700;
+}
+.profissional-avatar.qualquer {
+  font-size: 22px;
+}
+
+.seletor-profissional {
+  min-width: 0;
+}
+.profissionais-cards {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 2px 10px;
+  scroll-snap-type: x mandatory;
+}
+.profissionais-cards > button {
+  display: grid;
+  flex: 0 0 104px;
+  justify-items: center;
+  gap: 8px;
+  padding: 12px 8px;
+  color: #ddd9d0;
+  background: #111310;
+  border: 1px solid #3b3c36;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  scroll-snap-align: start;
+}
+.profissionais-cards > button span:last-child {
+  overflow-wrap: anywhere;
+}
+.profissionais-cards > button.ativo {
+  color: #111;
+  background: #cda758;
+  border-color: #cda758;
+}
+.profissionais-cards > button.ativo .profissional-avatar {
+  border-color: #111;
+}
+.profissional-aviso {
+  margin: 6px 0 0;
+  color: #aaa79f;
+  font-size: 12px;
+}
+.profissional-aviso.erro {
+  color: #f27d72;
+}
+
+.foto-profissional {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  border: 1px solid #353630;
+  border-radius: 3px;
+}
+.foto-profissional > div {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.foto-profissional small {
+  color: #898a82;
+}
+.foto-profissional small.ok {
+  color: #6fcf8f;
+}
+.foto-profissional small.erro {
+  color: #f27d72;
+}
+.foto-profissional-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.foto-profissional-acoes label {
+  position: relative;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  color: #111;
+  background: #cda758;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.foto-profissional-acoes label.desabilitado {
+  opacity: 0.6;
+  cursor: wait;
+}
+.foto-profissional-acoes input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.servicos-realizados {
+  display: grid;
+  gap: 12px;
+}
+.servicos-realizados-lista {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.servicos-realizados-lista > label {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  color: #ddd9d0;
+  background: #111310;
+  border: 1px solid #3b3c36;
+  cursor: pointer;
+}
+.servicos-realizados-lista > label.selecionado {
+  border-color: #cda758;
+  box-shadow: inset 0 0 0 1px #cda758;
+}
+.servicos-realizados-lista input {
+  width: 17px;
+  height: 17px;
+  accent-color: #cda758;
+}
+.servicos-realizados-lista span {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+.servicos-realizados-lista small {
+  color: #85867f;
+}
+.servicos-realizados-lista b {
+  color: #cda758;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .servicos-realizados-lista {
+    grid-template-columns: 1fr;
+  }
+  .foto-profissional {
+    align-items: flex-start;
+  }
+}

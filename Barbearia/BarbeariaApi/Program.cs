@@ -95,6 +95,7 @@ builder.Services.AddScoped<LoginService>();
 // Pessoas, equipe e barbeiros
 builder.Services.AddScoped<PessoaRepository>();
 builder.Services.AddScoped<PessoaService>();
+builder.Services.AddScoped<UsuarioRepository>();
 
 // Agenda e catálogo
 builder.Services.AddScoped<ServicoRepository>();
