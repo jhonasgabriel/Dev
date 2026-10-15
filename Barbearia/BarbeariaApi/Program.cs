@@ -109,6 +109,10 @@ builder.Services.AddScoped<ProdutoService>();
 // Atendimento, financeiro e relatórios
 builder.Services.AddScoped<AtendimentoRepository>();
 builder.Services.AddScoped<AtendimentoService>();
+builder.Services.AddScoped<FinanceiroRepository>();
+builder.Services.AddScoped<FinanceiroService>();
+builder.Services.AddScoped<DashboardRepository>();
+builder.Services.AddScoped<DashboardService>();
 builder.Services.AddScoped<ControleRepository>();
 
 builder.Services.AddEndpointsApiExplorer();

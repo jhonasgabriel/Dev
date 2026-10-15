@@ -11,6 +11,25 @@ namespace BarbeariaApi.Controllers;
 [Authorize(Roles = "Admin,Barbeiro")]
 public class ControleController(ControleRepository controle, AgendaRepository agenda) : ControllerBase
 {
+    [HttpGet]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Consultar(DateTime inicio, DateTime fim)
+    {
+        if (inicio == default || fim < inicio || (fim - inicio).TotalDays > 366)
+            return BadRequest(new { message = "Informe um período válido de até 366 dias." });
+
+        return Ok(await controle.Consultar(inicio, fim));
+    }
+
+    [HttpGet("debitos/{idPessoa:int:min(1)}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Debitos(int idPessoa)
+    {
+        var hoje = Agora().Date;
+        var dados = await controle.Consultar(hoje, hoje, idPessoa);
+        return Ok(dados.Debitos);
+    }
+
     [HttpPost("finalizar")]
     public async Task<IActionResult> Finalizar(InConcluirAgendamento input)
     {
@@ -41,4 +60,17 @@ public class ControleController(ControleRepository controle, AgendaRepository ag
         await controle.Concluir(input, item);
         return NoContent();
     }
+
+    [HttpPost("receber")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Receber(InReceberDebito input)
+    {
+        if (input.CD_Chave == Guid.Empty || decimal.Round(input.VL_Pagamento, 2) != input.VL_Pagamento)
+            return BadRequest(new { message = "Informe a chave da operação e um valor com até duas casas decimais." });
+
+        await controle.Receber(input);
+        return NoContent();
+    }
+
+    private static DateTime Agora() => TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.UtcNow, "E. South America Standard Time");
 }
