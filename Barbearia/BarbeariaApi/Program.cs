@@ -98,6 +98,8 @@ builder.Services.AddScoped<PessoaService>();
 builder.Services.AddScoped<UsuarioRepository>();
 
 // Agenda e catálogo
+builder.Services.AddScoped<AgendaRepository>();
+builder.Services.AddScoped<AgendaService>();
 builder.Services.AddScoped<ServicoRepository>();
 builder.Services.AddScoped<ServicoService>();
 builder.Services.AddScoped<ImagemService>();

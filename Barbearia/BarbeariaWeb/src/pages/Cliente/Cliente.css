@@ -1,0 +1,535 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600&display=swap');
+.cliente-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #eae7df;
+  background: #0e100e;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+.profissional-seletor {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 28px;
+  color: #cda758;
+  font-size: 13px;
+}
+.profissional-seletor select {
+  min-height: 44px;
+  width: 100%;
+  padding: 10px;
+  color: #eae7df;
+  background: #171916;
+  border: 1px solid #474842;
+  font: inherit;
+}
+.agendamento-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 86px;
+  padding: 0 max(24px, calc((100% - 1120px) / 2));
+  background: #080908;
+  border-bottom: 1px solid #735e34;
+}
+.agendamento-marca {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+}
+.agendamento-marca span {
+  color: #cda758;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 9px;
+  letter-spacing: 4px;
+}
+.agendamento-marca strong {
+  margin-top: 5px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+.voltar-home {
+  color: #aaa69d;
+  font-size: 12px;
+  text-decoration: none;
+}
+.voltar-home:hover {
+  color: #cda758;
+}
+.cliente-identificacao {
+  display: flex;
+  justify-self: end;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+}
+.cliente-identificacao span {
+  color: #d5d1c8;
+}
+.cliente-identificacao a {
+  padding-left: 16px;
+  color: #cda758;
+  border-left: 1px solid #393a34;
+  text-decoration: none;
+}
+.agendamento-apresentacao {
+  padding: 54px 24px;
+  background: radial-gradient(circle at 82% 30%, rgb(205 167 88 / 0.15), transparent 25%),
+    linear-gradient(120deg, #0b0c0b, #161712);
+  border-bottom: 1px solid #2b2c27;
+  text-align: center;
+}
+.agendamento-apresentacao > span {
+  color: #cda758;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.agendamento-apresentacao h1 {
+  margin: 8px 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(46px, 6vw, 68px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.agendamento-apresentacao p {
+  max-width: 630px;
+  margin: 0 auto;
+  color: #96938b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.agendamento-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 30px;
+  width: min(1120px, calc(100% - 48px));
+  margin: 48px auto 0;
+  padding-bottom: 70px;
+  align-items: start;
+}
+.agendamento-conteudo {
+  min-width: 0;
+}
+.secao-titulo {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 34px 0 15px;
+}
+.secao-titulo:first-child {
+  margin-top: 0;
+}
+.secao-titulo > span {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  place-items: center;
+  color: #111;
+  background: #cda758;
+  border-radius: 50%;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+}
+.secao-titulo h2 {
+  margin: 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.secao-titulo p {
+  margin: 2px 0 0;
+  color: #77786f;
+  font-size: 11px;
+}
+.servicos-lista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.servico {
+  display: flex;
+  min-width: 0;
+  min-height: 118px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  color: #dedbd3;
+  background: #171916;
+  border: 1px solid #31322d;
+  border-radius: 3px;
+  text-align: left;
+  cursor: pointer;
+}
+.servico:hover,
+.servico.ativo {
+  border-color: #cda758;
+  box-shadow: inset 0 0 0 1px #cda758;
+}
+.servico span {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+.servico strong {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 19px;
+  text-transform: uppercase;
+}
+.servico small {
+  overflow-wrap: anywhere;
+  color: #77786f;
+  font-size: 10px;
+  line-height: 1.4;
+}
+.servico b {
+  margin-top: 10px;
+  color: #cda758;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px;
+}
+.datas-lista {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(60px, 1fr));
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.data {
+  min-height: 76px;
+  padding: 9px 4px;
+  color: #9e9c95;
+  background: #171916;
+  border: 1px solid #31322d;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.data small {
+  display: block;
+  text-transform: capitalize;
+}
+.data strong {
+  display: block;
+  margin-top: 7px;
+  color: #eee9df;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 25px;
+}
+.data.ativa {
+  color: #111;
+  background: #cda758;
+  border-color: #cda758;
+}
+.data.ativa strong {
+  color: #111;
+}
+.horarios-tabela {
+  display: grid;
+  overflow: hidden;
+  background: #171916;
+  border: 1px solid #31322d;
+  border-radius: 3px;
+}
+.horarios-cabecalho,
+.horario-linha {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  align-items: center;
+  text-align: left;
+}
+.horarios-cabecalho {
+  color: #888981;
+  background: #121411;
+  border-bottom: 1px solid #31322d;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.horarios-cabecalho span,
+.horario-linha time,
+.horario-linha span {
+  padding: 13px 15px;
+}
+.horario-linha {
+  min-height: 49px;
+  color: #ddd9d0;
+  background: #171916;
+  border: 0;
+  border-bottom: 1px solid #292a26;
+  cursor: pointer;
+  font: inherit;
+}
+.horario-linha time {
+  border-right: 1px solid #292a26;
+}
+.horario-linha span {
+  color: #73b17d;
+  font-size: 12px;
+}
+.horario-linha:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.horario-linha:disabled span {
+  color: #c17979;
+}
+.horario-linha.ativo {
+  color: #111;
+  background: #cda758;
+}
+.horario-linha.ativo span {
+  color: #111;
+}
+.sem-horarios {
+  margin: 0;
+  padding: 25px;
+  color: #7e7f77;
+  font-size: 12px;
+  text-align: center;
+}
+.resumo-agendamento {
+  position: sticky;
+  top: 110px;
+  padding: 25px;
+  background: #171916;
+  border: 1px solid #393a33;
+  border-top: 3px solid #cda758;
+  border-radius: 3px;
+}
+.resumo-agendamento > span {
+  color: #cda758;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.resumo-agendamento h2 {
+  margin: 7px 0 18px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 29px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.resumo-agendamento dl {
+  margin: 0;
+}
+.resumo-agendamento dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #30312c;
+}
+.resumo-agendamento dt {
+  color: #77786f;
+  font-size: 11px;
+}
+.resumo-agendamento dd {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: right;
+}
+.resumo-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 23px 0;
+}
+.resumo-total span {
+  color: #aaa79f;
+  font-size: 11px;
+}
+.resumo-total strong {
+  color: #cda758;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 25px;
+}
+.confirmar {
+  width: 100%;
+  min-height: 48px;
+  color: #111;
+  background: #cda758;
+  border: 0;
+  border-radius: 2px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.confirmar:hover {
+  background: #e0bf75;
+}
+.confirmar:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.mensagem {
+  padding: 11px;
+  border-radius: 2px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.mensagem.erro {
+  color: #e5a6a6;
+  background: #371d1d;
+}
+.mensagem.sucesso {
+  color: #a5d9ad;
+  background: #18301d;
+}
+.estado-vazio {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 20px;
+  color: #888981;
+  border: 1px dashed #393a35;
+  text-align: center;
+}
+.modal-dados-fundo {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  padding: 20px;
+  place-items: center;
+  background: rgb(0 0 0 / 0.78);
+  backdrop-filter: blur(5px);
+}
+.modal-dados {
+  position: relative;
+  width: min(460px, 100%);
+  padding: 34px;
+  color: #eae7df;
+  background: #151714;
+  border: 1px solid #454237;
+  border-top: 3px solid #cda758;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 0.65);
+}
+.modal-dados > span {
+  color: #cda758;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.modal-dados h2 {
+  margin: 7px 0 8px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 34px;
+  text-transform: uppercase;
+}
+.modal-dados > p {
+  margin: 0 0 24px;
+  color: #8c8d85;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.modal-dados-fechar {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 35px;
+  height: 35px;
+  color: #aaa79f;
+  background: transparent;
+  border: 1px solid #3e3f39;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+}
+.modal-dados form {
+  display: grid;
+  gap: 17px;
+}
+.modal-dados label {
+  display: grid;
+  gap: 7px;
+  color: #b8b5ad;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.modal-dados input {
+  min-height: 48px;
+  padding: 0 13px;
+  color: #fff;
+  background: #0d0f0d;
+  border: 1px solid #3d3e38;
+  border-radius: 2px;
+  outline: none;
+  font: inherit;
+}
+.modal-dados input:focus {
+  border-color: #cda758;
+  box-shadow: 0 0 0 2px rgb(205 167 88 / 0.13);
+}
+.modal-dados form > button {
+  min-height: 49px;
+  color: #111;
+  background: #cda758;
+  border: 0;
+  border-radius: 2px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.modal-dados form > button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+@media (max-width: 900px) {
+  .agendamento-header {
+    grid-template-columns: 1fr auto;
+  }
+  .voltar-home {
+    display: none;
+  }
+  .agendamento-layout {
+    grid-template-columns: 1fr;
+  }
+  .resumo-agendamento {
+    position: static;
+  }
+  .servicos-lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .agendamento-header {
+    padding: 0 16px;
+  }
+  .agendamento-layout {
+    width: calc(100% - 30px);
+    margin-top: 30px;
+  }
+  .servicos-lista {
+    grid-template-columns: 1fr;
+  }
+  .datas-lista {
+    grid-template-columns: repeat(7, 62px);
+  }
+  .agendamento-apresentacao {
+    padding: 43px 20px;
+  }
+  .agendamento-apresentacao h1 {
+    font-size: 46px;
+  }
+  .modal-dados {
+    padding: 28px 22px;
+  }
+}
