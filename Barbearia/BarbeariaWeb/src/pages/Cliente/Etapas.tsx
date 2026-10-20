@@ -33,6 +33,7 @@ export function EscolhaServicos({servicos ,selecionados ,alternar}: EscolhaServi
              {servicos.map(servico => (
                <button key={servico.id_servico}
                        type="button"
+                       aria-pressed={selecionados.includes(servico.id_servico)}
                        className={selecionados.includes(servico.id_servico) ? 'servico ativo' : 'servico'}
                        onClick={() => alternar(servico.id_servico)}>
                  <span>
